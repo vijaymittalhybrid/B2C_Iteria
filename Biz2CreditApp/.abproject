@@ -23,6 +23,7 @@
     "org.apache.cordova.dialogs",
     "org.apache.cordova.splashscreen",
     "org.apache.cordova.statusbar",
+    "com.telerik.plugin.eqatecanalytics",
     "org.apache.cordova.vibration"
   ],
   "DeviceOrientations": [

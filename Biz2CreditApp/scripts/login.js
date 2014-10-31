@@ -105,6 +105,8 @@
             localStorage.setItem("userID",userinfo['userID']);
             localStorage.setItem("userEmail",userinfo['userEmail']);
             localStorage.setItem("userMobile",userinfo['userMobile']);
+            app.analyticsService.viewModel.setInstallationInfo(userinfo['userEmail']);
+            app.analyticsService.viewModel.trackFeature("login"+"."+userinfo['userEmail']);
             that.setSettingsPage();
             that.navigateHome();
         },
@@ -112,6 +114,7 @@
 		
         setUserLogout: function () {
             var that = this;
+            app.analyticsService.viewModel.monitorStop("logout."+localStorage.getItem("userEmail"));
             that.set("isLoggedIn", false);
             localStorage.setItem("isLoggedIn",false);
             localStorage.removeItem("userFName");
@@ -124,8 +127,10 @@
             that.set("email", "");
             that.set("name", "");
             apps.navigate("#tabstrip-login");
+            
             kendo.history.navigate("#tabstrip-login");
             that.clearForm();
+            
             app.homesetting.viewModel.closeParentPopover();
             
         },

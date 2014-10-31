@@ -7,7 +7,9 @@
             e.preventDefault();
             navigator.notification.confirm('Do you really want to exit?', function (confirmed) {
             if (confirmed === true || confirmed === 1) {
+                app.analyticsService.viewModel.monitorStop("Exit.Exit by Device Backbutton");
             	navigator.app.exitApp();
+                
             }
 
             }, 'Biz2Credit', 'Yes,No');
@@ -35,6 +37,8 @@
             
         }
     };
+    
+    
     var Keyboardisoff = function() {
       $("#tabstrip-sign-up").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
     };
@@ -46,6 +50,7 @@
         document.addEventListener("hidekeyboard", Keyboardisoff, false);
         window.connectionInfo = new ConnectionApp();
 		window.connectionInfo.checkConnection();
+        app.analyticsService.viewModel.monitorStatusCheck();
         navigator.splashscreen.hide();
     };
 
@@ -77,6 +82,9 @@
     	},
         
     }
+    
+    /*Telerik Analytics*/
+   
     
     
     if(localStorage.getItem("isLoggedIn") === 'true')
