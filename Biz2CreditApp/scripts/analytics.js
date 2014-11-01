@@ -17,7 +17,15 @@
            }
            else
            {
-               app.analyticsService.viewModel.trackFeature("login.unauthorize User");
+               app.analyticsService.viewModel.trackFeature("AppOpen.Unknown User");
+               
+               $("#forgotPwd").click(function(){
+                   app.analyticsService.viewModel.trackFeature("forgotPassword.Unknown User");
+               });
+               
+               $("#newUser").click(function(){
+                   app.analyticsService.viewModel.trackFeature("newUser.Unknown User");
+               });
            }
        },
         
@@ -36,6 +44,7 @@
                if(result.IsCreated === 'true' || result.IsCreated === true)
                {
                    console.log("monitor create");
+                   app.analyticsService.viewModel.monitorStart();
                }
                else
                {

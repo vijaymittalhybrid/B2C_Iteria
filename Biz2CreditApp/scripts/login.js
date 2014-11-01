@@ -114,7 +114,7 @@
 		
         setUserLogout: function () {
             var that = this;
-            app.analyticsService.viewModel.monitorStop("logout."+localStorage.getItem("userEmail"));
+            app.analyticsService.viewModel.trackFeature("logout."+localStorage.getItem("userEmail"));
             that.set("isLoggedIn", false);
             localStorage.setItem("isLoggedIn",false);
             localStorage.removeItem("userFName");
@@ -201,6 +201,7 @@
         },
         mobileNotification:function(msg,status)
         {
+            app.analyticsService.viewModel.trackFeature(msg);
             var toast =window.plugins.toast;
             var message =msg;
             toast.showLongBottom(message,
