@@ -141,14 +141,16 @@
             app.loginService.viewModel.hideloder();
         	if(data[0]['results']['faultcode'] === 1 || data[0]['results']['faultcode'] === "1")
             {
-                
+                console.log(data);
                 $msg= "Your account has been created successfully";
+                app.analyticsService.viewModel.trackFeature("Registration."+data[0]['results']['UserData']['userEmail']+" account has been created successfully");
                 app.loginService.viewModel.mobileNotification($msg,'info');
                 app.loginService.viewModel.setUserLogin(data[0]['results']['UserData']);
             }
             else if(data[0]['results']['faultcode'] === 0 || data[0]['results']['faultcode'] === "0")
             {
                $msg= "Registration not successfull. Please try again.";
+               app.analyticsService.viewModel.trackFeature("Registration."+$msg);
                app.loginService.viewModel.mobileNotification($msg,'info'); 
                return;
             }
@@ -161,17 +163,20 @@
             else if(data[0]['results']['faultcode'] === 4 || data[0]['results']['faultcode'] === "4")
             {
                $msg= "Please enter a valid email address.";
+               app.analyticsService.viewModel.trackFeature("Registration.User create registration with invalid emailId");
                app.loginService.viewModel.mobileNotification($msg,'info');
                return;
             }
             else if(data[0]['results']['faultcode'] === 5 || data[0]['results']['faultcode'] === "5")
             {
                $msg= "This email address already exists.";
+               app.analyticsService.viewModel.trackFeature("Registration.User create registration with alredy exist emailId");
                app.loginService.viewModel.mobileNotification($msg,'info');
                return;
             }
             else{
                 $msg= "Server not responding properly,Please try again";
+                app.analyticsService.viewModel.trackFeature("Registration."+$msg);
                 app.loginService.viewModel.mobileNotification($msg,'info');
                 return;
             }            

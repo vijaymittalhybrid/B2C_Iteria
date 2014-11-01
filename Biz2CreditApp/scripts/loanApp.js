@@ -118,6 +118,7 @@
         savedAppClick:function(e)
         {
             var that=this;
+            app.analyticsService.viewModel.trackFeature("ManageApplication.User click on Application by Edit Mode");
             $('#tabstrip ul li').removeClass('k-state-active');
             $('#tabstrip ul li.sevd_icon').addClass('k-state-active');
             that.set('postAppTab',false);

@@ -7,7 +7,7 @@
             e.preventDefault();
             navigator.notification.confirm('Do you really want to exit?', function (confirmed) {
             if (confirmed === true || confirmed === 1) {
-                app.analyticsService.viewModel.monitorStop("Exit.Exit by Device Backbutton");
+                app.analyticsService.viewModel.monitorStop("Exit.User exit by Device Backbutton");
             	navigator.app.exitApp();
                 
             }

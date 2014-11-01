@@ -115,6 +115,7 @@
         setUserLogout: function () {
             var that = this;
             app.analyticsService.viewModel.trackFeature("logout."+localStorage.getItem("userEmail"));
+            //app.analyticsService.viewModel.monitorStatusCheck();
             that.set("isLoggedIn", false);
             localStorage.setItem("isLoggedIn",false);
             localStorage.removeItem("userFName");
@@ -180,6 +181,7 @@
                 }
                 else
                 {
+                    app.analyticsService.viewModel.trackFeature("Dashboard.User Reach on Dashboard");
                      apps.navigate('#tabstrip-home');
                 }
                   
@@ -188,9 +190,10 @@
         },
         
         onSettingPage:function(e)
-        {	apps.navigate('#tabstrip-Setting');
+        {	
+            app.analyticsService.viewModel.trackFeature("Settings.User click on Settings");
+            apps.navigate('#tabstrip-Setting');
              app.homesetting.viewModel.closeParentPopover();
-            
         },
         setSettingsPage:function()
         {
@@ -279,12 +282,14 @@
             	if(data[0]['results']['faultcode'] === 1)
                 {
                 	$msg= "New password has been created and sent successfully to your email account.";
+                    app.analyticsService.viewModel.trackFeature("forgotPassword."+$msg);
                     app.loginService.viewModel.mobileNotification($msg,'info');
                     apps.navigate("#tabstrip-login");
                     kendo.history.navigate("#tabstrip-login");
                     that.clearForm();
                 }
                 else if(data[0]['results']['faultcode'] === 2){
+                    app.analyticsService.viewModel.trackFeature("forgotPassword.email id does not match");
                     navigator.notification.alert("Sorry, this email id does not match with any user record.",
                     function () { }, "Notification", 'OK');
                     return;
@@ -349,12 +354,14 @@
             }
             else
             {
+                app.analyticsService.viewModel.trackFeature("FreshLoanApplication.User click on fresh loan form");
                 apps.navigate("views/loanAppBI.html");
             }
                  
         },
         mydocuments: function()
         {   
+             app.analyticsService.viewModel.trackFeature("Document.User click on Document");
              apps.navigate("views/documents.html");
         },
         formValidateReset:function()
@@ -380,6 +387,7 @@
         },
         manageApp:function()
         {
+            app.analyticsService.viewModel.trackFeature("ManageApplication.User click on Manage Application");
             apps.navigate("views/loanApp.html");
         }
 

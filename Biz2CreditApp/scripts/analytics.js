@@ -3,7 +3,8 @@
         app = global.app = global.app || {};
     
     var productId = "f59992bd604a4febb1309522069c3937",
-        version   = "1.5";
+        version   = "1.5",
+        isMonitorStatus = false;
     
     AnalyticsModel = kendo.data.ObservableObject.extend({
         
@@ -12,29 +13,13 @@
            var loginStatus = localStorage.getItem("isLoggedIn");
            if(loginStatus === 'true' || loginStatus === true)
            {
-               app.analyticsService.viewModel.trackFeature("login"+"."+localStorage.getItem("userEmail"));
+               app.analyticsService.viewModel.trackFeature("AppOpen&login"+"."+localStorage.getItem("userEmail"));
                app.analyticsService.viewModel.setInstallationInfo(localStorage.getItem("userEmail"));
            }
            else
            {
-               app.analyticsService.viewModel.trackFeature("AppOpen.Unknown User");
-               
-               $("#forgotPwd").click(function(){
-                   app.analyticsService.viewModel.trackFeature("forgotPassword.Unknown User");
-               });
-               
-               $("#newUser").click(function(){
-                   app.analyticsService.viewModel.trackFeature("newUser.Unknown User");
-               });
+               app.analyticsService.viewModel.trackFeature("AppLoad.Unknown User");
            }
-       },
-        
-       userLogin:function()
-       {
-           console.log(localStorage.getItem("isLoggedIn"));
-           console.log(localStorage.getItem("userEmail"));
-          
-           console.log(apps.view()['element']['0']['id']);
        },
         
        monitorStatusCheck:function()
@@ -43,8 +28,9 @@
            factory.IsMonitorCreated(function(result){
                if(result.IsCreated === 'true' || result.IsCreated === true)
                {
-                   console.log("monitor create");
-                   app.analyticsService.viewModel.monitorStart();
+                   console.log("monitor has been create");
+                   //app.analyticsService.viewModel.monitorStop();
+                   //app.analyticsService.viewModel.monitorStart();
                }
                else
                {
@@ -58,6 +44,7 @@
         {
             var factory = window.plugins.EqatecAnalytics.Factory;
             var settings = factory.CreateSettings(productId,version);
+            
             settings.TestMode = 'true';
             settings.LoggingInterface = {
                                             LogError:function(errorMsg)
@@ -83,13 +70,11 @@
                     console.log("Error creating monitor :"+msg);
                 }
             )
-            console.log(settings);
         },
         
         monitorStart:function()
         {
             var monitor = window.plugins.EqatecAnalytics.Monitor;
-            //app.analyticsService.viewModel.monitorStart();
             monitor.Start(function()
             {
                 console.log('monitor start');
