@@ -19,6 +19,7 @@
            else
            {
                app.analyticsService.viewModel.trackFeature("AppLoad.Unknown User");
+               app.analyticsService.viewModel.setInstallationInfo("Not Register");
            }
        },
         
@@ -30,7 +31,7 @@
                {
                    console.log("monitor has been create");
                    //app.analyticsService.viewModel.monitorStop();
-                   //app.analyticsService.viewModel.monitorStart();
+                   app.analyticsService.viewModel.monitorStart();
                }
                else
                {
