@@ -53,10 +53,6 @@
         app.analyticsService.viewModel.monitorStatusCheck();
         navigator.splashscreen.hide();
     };
-    
-    var onResume = function(){
-        alert("Hello menu");
-    }
 
     // Handle "deviceready" event
     document.addEventListener('deviceready', onDeviceReady, false);
