@@ -38,6 +38,10 @@
         }
     };
     
+    var onMenuKeyDown = function(){
+      alert("hello");  
+    };
+    
     
     var Keyboardisoff = function() {
       $("#tabstrip-sign-up").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
@@ -47,6 +51,7 @@
         StatusBar.overlaysWebView(false);
         StatusBar.backgroundColorByHexString('#99cc00');
         document.addEventListener('backbutton', onBackKeyDown, false);
+        document.addEventListener("menubutton", onMenuKeyDown, false);
         document.addEventListener("hidekeyboard", Keyboardisoff, false);
         window.connectionInfo = new ConnectionApp();
 		window.connectionInfo.checkConnection();

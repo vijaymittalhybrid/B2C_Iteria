@@ -13,12 +13,12 @@
            var loginStatus = localStorage.getItem("isLoggedIn");
            if(loginStatus === 'true' || loginStatus === true)
            {
-               app.analyticsService.viewModel.trackFeature("AppOpen&login"+"."+localStorage.getItem("userEmail"));
+               app.analyticsService.viewModel.trackFeature("AppOpen&login_FirstTime"+"."+localStorage.getItem("userEmail"));
                app.analyticsService.viewModel.setInstallationInfo(localStorage.getItem("userEmail"));
            }
            else
            {
-               app.analyticsService.viewModel.trackFeature("AppLoad.Unknown User");
+               app.analyticsService.viewModel.trackFeature("AppLoad_FirstTime.Unknown User");
                app.analyticsService.viewModel.setInstallationInfo("Not Register");
            }
        },
@@ -26,12 +26,14 @@
        monitorStatusCheck:function()
        {
            var factory = window.plugins.EqatecAnalytics.Factory;
+           console.log(apps.view()['element']['0']['id']);
            factory.IsMonitorCreated(function(result){
                if(result.IsCreated === 'true' || result.IsCreated === true)
                {
                    console.log("monitor has been create");
                    //app.analyticsService.viewModel.monitorStop();
-                   app.analyticsService.viewModel.monitorStart();
+                   app.analyticsService.viewModel.getStatus(app);
+                  // app.analyticsService.viewModel.monitorStart();
                }
                else
                {
@@ -64,11 +66,8 @@
                 function()
                 {
                     console.log("Monitor create");
-                    if(isMonitorStatus !== 'false' || isMonitorStatus !== false)
-                    {
-                       app.analyticsService.viewModel.monitorStart();  
-                    }
-                   // app.analyticsService.viewModel.monitorStart();
+                    app.analyticsService.viewModel.monitorStart();
+                   // app.analyticsService.viewModel.getStatus();
                 },
                 function(msg)
                 {
@@ -109,6 +108,21 @@
             var monitor = window.plugins.EqatecAnalytics.Monitor;
             console.log(installationId);
             monitor.SetInstallationInfo(installationId);
+        },
+        
+        getStatus:function(app){
+            var monitor = window.plugins.EqatecAnalytics.Monitor;
+            console.log(app);
+            monitor.GetStatus(function(status) {
+                console.log("Monitor status:");
+                
+                console.log(status.IsStarted);
+                
+                if(status.IsStarted === true)
+                {
+                    console.log("monitor start");
+                }
+            });
         }
     });
     app.analyticsService = {
