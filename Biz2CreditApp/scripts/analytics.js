@@ -13,12 +13,12 @@
            var loginStatus = localStorage.getItem("isLoggedIn");
            if(loginStatus === 'true' || loginStatus === true)
            {
-               app.analyticsService.viewModel.trackFeature("AppOpen&login_FirstTime"+"."+localStorage.getItem("userEmail"));
+               app.analyticsService.viewModel.trackFeature("AppOpen&login"+"."+localStorage.getItem("userEmail"));
                app.analyticsService.viewModel.setInstallationInfo(localStorage.getItem("userEmail"));
            }
            else
            {
-               app.analyticsService.viewModel.trackFeature("AppLoad_FirstTime.Unknown User");
+               app.analyticsService.viewModel.trackFeature("AppLoad.Unknown User");
                app.analyticsService.viewModel.setInstallationInfo("Not Register");
            }
        },
@@ -26,7 +26,6 @@
        monitorStatusCheck:function()
        {
            var factory = window.plugins.EqatecAnalytics.Factory;
-           
            factory.IsMonitorCreated(function(result){
                if(result.IsCreated === 'true' || result.IsCreated === true)
                {
@@ -60,12 +59,16 @@
                                         };
             settings.DailyNetworkUtilizationInKB = 5120;
             settings.MaxStorageSizeInKB = 8192;
-            console.log(settings);
+            
             factory.CreateMonitorWithSettings(settings,
                 function()
                 {
                     console.log("Monitor create");
-                    app.analyticsService.viewModel.monitorStart();
+                    if(isMonitorStatus !== 'false' || isMonitorStatus !== false)
+                    {
+                       app.analyticsService.viewModel.monitorStart();  
+                    }
+                   // app.analyticsService.viewModel.monitorStart();
                 },
                 function(msg)
                 {
