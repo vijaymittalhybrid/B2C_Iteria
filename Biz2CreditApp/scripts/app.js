@@ -38,7 +38,7 @@
         }
     };
     
-    var onMenuKeyDown = function(){
+    var onMenuKeyDown = function(e){
       alert("hello");  
     };
     
@@ -110,5 +110,18 @@
    localStorage.setItem("urlMobAppApiFile","http://sandbox.biz2services.com/mobapp/api/file/");
     localStorage.setItem("urlMobAppApiUser","http://sandbox.biz2services.com/mobapp/api/user/");
     localStorage.setItem("urlMobAppApiLoan","http://sandbox.biz2services.com/mobapp/api/loanapp/");
+    
+    
+    $(document).ready(function() {
+       document.addEventListener("menubutton", onMenuKeyDown, false);
+    });
+
+   
+    onMenuKeyDown = function () {
+        // your code..
+        alert('Menu Button pressed..');
+    }
+    
+    
     
 })(window);
