@@ -115,7 +115,6 @@
         setUserLogout: function () {
             var that = this;
             app.analyticsService.viewModel.trackFeature("logout."+localStorage.getItem("userEmail"));
-            app.analyticsService.viewModel.monitorStatusCheck();
             that.set("isLoggedIn", false);
             localStorage.setItem("isLoggedIn",false);
             localStorage.removeItem("userFName");

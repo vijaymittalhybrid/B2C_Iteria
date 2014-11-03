@@ -3,14 +3,14 @@
         app = global.app = global.app || {};
     
     var productId = "f59992bd604a4febb1309522069c3937",
-        version   = "1.5",
-        isMonitorStatus = false;
+        version   = "1.5";
     
     AnalyticsModel = kendo.data.ObservableObject.extend({
         
        userStatus:function()
        {   
            var loginStatus = localStorage.getItem("isLoggedIn");
+           
            if(loginStatus === 'true' || loginStatus === true)
            {
                app.analyticsService.viewModel.trackFeature("AppOpen&login_FirstTime"+"."+localStorage.getItem("userEmail"));
@@ -26,14 +26,11 @@
        monitorStatusCheck:function()
        {
            var factory = window.plugins.EqatecAnalytics.Factory;
-           console.log(apps.view()['element']['0']['id']);
+           
            factory.IsMonitorCreated(function(result){
                if(result.IsCreated === 'true' || result.IsCreated === true)
                {
                    console.log("monitor has been create");
-                   //app.analyticsService.viewModel.monitorStop();
-                   app.analyticsService.viewModel.getStatus(app);
-                  // app.analyticsService.viewModel.monitorStart();
                }
                else
                {
@@ -47,6 +44,7 @@
         {
             var factory = window.plugins.EqatecAnalytics.Factory;
             var settings = factory.CreateSettings(productId,version);
+            var monitor = window.plugins.EqatecAnalytics.Monitor;
             
             settings.TestMode = 'true';
             settings.LoggingInterface = {
@@ -66,8 +64,7 @@
                 function()
                 {
                     console.log("Monitor create");
-                    app.analyticsService.viewModel.monitorStart();
-                   // app.analyticsService.viewModel.getStatus();
+                    app.analyticsService.viewModel.monitorStart(monitor);
                 },
                 function(msg)
                 {
@@ -76,9 +73,8 @@
             )
         },
         
-        monitorStart:function()
+        monitorStart:function(monitor)
         {
-            var monitor = window.plugins.EqatecAnalytics.Monitor;
             monitor.Start(function()
             {
                 console.log('monitor start');
@@ -99,25 +95,20 @@
         trackFeature:function(trackfeature)
         {
             var monitor = window.plugins.EqatecAnalytics.Monitor;
-            console.log(trackfeature);
             monitor.TrackFeature(trackfeature);
         },
         
         setInstallationInfo:function(installationId)
         {
             var monitor = window.plugins.EqatecAnalytics.Monitor;
-            console.log(installationId);
             monitor.SetInstallationInfo(installationId);
         },
         
         getStatus:function(app){
             var monitor = window.plugins.EqatecAnalytics.Monitor;
-            console.log(app);
+           
             monitor.GetStatus(function(status) {
-                console.log("Monitor status:");
-                
-                console.log(status.IsStarted);
-                
+
                 if(status.IsStarted === true)
                 {
                     console.log("monitor start");
