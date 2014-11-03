@@ -13,12 +13,12 @@
            var loginStatus = localStorage.getItem("isLoggedIn");
            if(loginStatus === 'true' || loginStatus === true)
            {
-               app.analyticsService.viewModel.trackFeature("AppOpen&login"+"."+localStorage.getItem("userEmail"));
+               app.analyticsService.viewModel.trackFeature("AppOpen&login_FirstTime"+"."+localStorage.getItem("userEmail"));
                app.analyticsService.viewModel.setInstallationInfo(localStorage.getItem("userEmail"));
            }
            else
            {
-               app.analyticsService.viewModel.trackFeature("AppLoad.Unknown User");
+               app.analyticsService.viewModel.trackFeature("AppLoad_FirstTime.Unknown User");
                app.analyticsService.viewModel.setInstallationInfo("Not Register");
            }
        },
@@ -31,7 +31,7 @@
                if(result.IsCreated === 'true' || result.IsCreated === true)
                {
                    console.log("monitor has been create");
-                   app.analyticsService.viewModel.monitorStop();
+                   //app.analyticsService.viewModel.monitorStop();
                    app.analyticsService.viewModel.monitorStart();
                }
                else
@@ -60,7 +60,7 @@
                                         };
             settings.DailyNetworkUtilizationInKB = 5120;
             settings.MaxStorageSizeInKB = 8192;
-            
+            console.log(settings);
             factory.CreateMonitorWithSettings(settings,
                 function()
                 {
