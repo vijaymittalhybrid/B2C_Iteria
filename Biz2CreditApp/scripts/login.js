@@ -354,7 +354,7 @@
             }
             else
             {
-                app.analyticsService.viewModel.trackFeature("FreshLoanApplication.User click on fresh loan form");
+                app.analyticsService.viewModel.trackFeature("FreshLoanApplication.User enter in fresh loan application");
                 apps.navigate("views/loanAppBI.html");
             }
                  

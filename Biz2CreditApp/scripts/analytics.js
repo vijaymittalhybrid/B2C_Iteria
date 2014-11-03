@@ -2,7 +2,7 @@
     var AnalyticsModel,
         app = global.app = global.app || {};
     
-    var productId = "12ee882498d84d6f960f0ceb5f22afc3",
+    var productId = "f59992bd604a4febb1309522069c3937",
         version   = "1.5",
         isMonitorStatus = false;
     

@@ -188,6 +188,7 @@
                 if(data[0]['results']['faultcode'] === 1 || data[0]['results']['faultcode'] === "1")
                 {
                     $msg= "Finacial Preference submitted successfully";
+                    app.analyticsService.viewModel.trackFeature("FreshLoanApplication.All Loan Application submitted successfully");
                     app.loginService.viewModel.mobileNotification($msg,'info');
                     
                     app.loanAppPI.viewModel.ManageOwnerHideenField(dataParam);
