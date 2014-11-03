@@ -26,11 +26,12 @@
        monitorStatusCheck:function()
        {
            var factory = window.plugins.EqatecAnalytics.Factory;
+           
            factory.IsMonitorCreated(function(result){
                if(result.IsCreated === 'true' || result.IsCreated === true)
                {
                    console.log("monitor has been create");
-                   //app.analyticsService.viewModel.monitorStop();
+                   app.analyticsService.viewModel.monitorStop();
                    app.analyticsService.viewModel.monitorStart();
                }
                else
