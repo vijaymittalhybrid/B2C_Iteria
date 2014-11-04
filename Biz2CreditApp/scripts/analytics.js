@@ -15,7 +15,7 @@
                if(result.IsCreated === 'true' || result.IsCreated === true)
                {
                    console.log("monitor has been create");
-                   app.analyticsService.viewModel.getStatus();
+                   app.analyticsService.viewModel.monitorStatus();
                }
                else
                {
@@ -94,7 +94,7 @@
            else
            {
                app.analyticsService.viewModel.trackFeature(operation+".Unknown User");
-               app.analyticsService.viewModel.setInstallationInfo("Not Register");
+               //app.analyticsService.viewModel.setInstallationInfo("Not Register");
            }
         },
         
@@ -111,7 +111,7 @@
             monitor.SetInstallationInfo(installationId);
         },
         
-        getStatus:function(){
+        monitorStatus:function(){
             
             var monitor = window.plugins.EqatecAnalytics.Monitor;
            
@@ -120,7 +120,7 @@
                 if(status.IsStarted === true)
                 {
                     console.log("getstatus");
-                    //app.analyticsService.viewModel.userStatus("AppLoad_AfterLogout");
+                    app.analyticsService.viewModel.userStatus("AppLoad_AfterLogout");
                 }
                 else
                 {

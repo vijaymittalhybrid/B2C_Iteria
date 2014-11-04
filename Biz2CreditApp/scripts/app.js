@@ -49,7 +49,6 @@
         document.addEventListener("hidekeyboard", Keyboardisoff, false);
         window.connectionInfo = new ConnectionApp();
 		window.connectionInfo.checkConnection();
-        //app.analyticsService.viewModel.monitorStatusCheck();
         if(navigator.geolocation)
         {
             navigator.geolocation.getCurrentPosition(oncallback);
