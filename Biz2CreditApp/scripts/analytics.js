@@ -46,6 +46,8 @@
             settings.LocationCoordinates.Latitude = latitude;
             settings.LocationCoordinates.Longitude = longitude;
             
+            console.log(settings);
+            
             factory.CreateMonitorWithSettings(settings,
                 function()
                 {
@@ -81,6 +83,7 @@
         
         userStatus:function(operation)
         {   
+            console.log(operation);
            var loginStatus = localStorage.getItem("isLoggedIn");
            
            if(loginStatus === 'true' || loginStatus === true)
@@ -104,6 +107,7 @@
         setInstallationInfo:function(installationId)
         {
             var monitor = window.plugins.EqatecAnalytics.Monitor;
+            console.log(installationId);
             monitor.SetInstallationInfo(installationId);
         },
         
@@ -115,7 +119,8 @@
 
                 if(status.IsStarted === true)
                 {
-                    app.analyticsService.viewModel.userStatus("AppLoad_AfterLogout");
+                    console.log("getstatus");
+                    //app.analyticsService.viewModel.userStatus("AppLoad_AfterLogout");
                 }
                 else
                 {

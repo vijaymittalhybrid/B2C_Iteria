@@ -47,21 +47,19 @@
         StatusBar.backgroundColorByHexString('#99cc00');
         document.addEventListener('backbutton', onBackKeyDown, false);
         document.addEventListener("hidekeyboard", Keyboardisoff, false);
-        document.addEventListener("pause", onPause, false);
-        document.addEventListener("resume", onResume, false);
         window.connectionInfo = new ConnectionApp();
 		window.connectionInfo.checkConnection();
         //app.analyticsService.viewModel.monitorStatusCheck();
-        
         if(navigator.geolocation)
         {
-            console.log("done");
             navigator.geolocation.getCurrentPosition(oncallback);
         }
         else
         {
             app.analyticsService.viewModel.monitorStatusCheck();
         }
+        document.addEventListener("pause", onPause, false);
+        document.addEventListener("resume", onResume, false);
         navigator.splashscreen.hide();
     };
     
