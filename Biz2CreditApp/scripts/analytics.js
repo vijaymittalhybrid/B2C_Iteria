@@ -2,7 +2,7 @@
     var AnalyticsModel,
         app = global.app = global.app || {};
     
-    var productId = "12ee882498d84d6f960f0ceb5f22afc3",
+    var productId = "f59992bd604a4febb1309522069c3937",
         version   = "1.5";
     
     AnalyticsModel = kendo.data.ObservableObject.extend({
@@ -75,10 +75,11 @@
         
         monitorStart:function(monitor)
         {
+            alert("monitor start");
             monitor.Start(function()
             {
                 console.log('monitor start');
-                alert("monitor start");
+                
                 app.analyticsService.viewModel.userStatus();
             });
         },
