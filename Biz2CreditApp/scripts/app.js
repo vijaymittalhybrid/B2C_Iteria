@@ -43,7 +43,6 @@
     };
 
     var onDeviceReady = function(e) {
-        console.log(e)
         StatusBar.overlaysWebView(false);
         StatusBar.backgroundColorByHexString('#99cc00');
         document.addEventListener('backbutton', onBackKeyDown, false);
@@ -52,10 +51,27 @@
         document.addEventListener("resume", onResume, false);
         window.connectionInfo = new ConnectionApp();
 		window.connectionInfo.checkConnection();
-        app.analyticsService.viewModel.monitorStatusCheck();
+        //app.analyticsService.viewModel.monitorStatusCheck();
+        
+        if(navigator.geolocation)
+        {
+            console.log("done");
+            navigator.geolocation.getCurrentPosition(oncallback);
+        }
+        else
+        {
+            app.analyticsService.viewModel.monitorStatusCheck();
+        }
         navigator.splashscreen.hide();
     };
     
+    var oncallback = function(position)
+    {
+        var latitude = position.coords.latitude,
+            longitude = position.coords.longitude;
+        app.analyticsService.viewModel.monitorStatusCheck(latitude,longitude);
+    };
+   
     var onPause = function(e){
         app.analyticsService.viewModel.monitorStop("User exit by other way");
     };

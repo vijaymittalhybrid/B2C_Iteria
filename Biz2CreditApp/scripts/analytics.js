@@ -7,9 +7,8 @@
     
     AnalyticsModel = kendo.data.ObservableObject.extend({
        
-       monitorStatusCheck:function()
-       {
-          
+       monitorStatusCheck:function(latitude,longitude)
+       {  
            var factory = window.plugins.EqatecAnalytics.Factory;
            
            factory.IsMonitorCreated(function(result){
@@ -21,12 +20,12 @@
                else
                {
                    console.log("monitor not create");
-                   app.analyticsService.viewModel.monitorCreate();
+                   app.analyticsService.viewModel.monitorCreate(latitude,longitude);
                }
            });
        },
         
-        monitorCreate:function()
+        monitorCreate:function(latitude,longitude)
         {
             var factory = window.plugins.EqatecAnalytics.Factory;
             var settings = factory.CreateSettings(productId,version);
@@ -44,6 +43,8 @@
                                         };
             settings.DailyNetworkUtilizationInKB = 5120;
             settings.MaxStorageSizeInKB = 8192;
+            settings.LocationCoordinates.Latitude = latitude;
+            settings.LocationCoordinates.Longitude = longitude;
             
             factory.CreateMonitorWithSettings(settings,
                 function()
@@ -118,18 +119,9 @@
                 }
                 else
                 {
-                    app.analyticsService.viewModel.monitorStart(monitor);
+                    app.analyticsService.viewModel.monitorStart();
                 }
             });
-        },
-        
-        getGeoLocation:function(){
-            if (navigator.geolocation) {
-            console.log("ok");
-            } else { 
-            console.log("no");
-            }
-
         }
     });
     app.analyticsService = {
