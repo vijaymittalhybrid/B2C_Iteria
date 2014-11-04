@@ -9,7 +9,6 @@
             if (confirmed === true || confirmed === 1) {
                 app.analyticsService.viewModel.monitorStop("Exit.User exit by Device Backbutton");
             	navigator.app.exitApp();
-                
             }
 
             }, 'Biz2Credit', 'Yes,No');
@@ -48,10 +47,20 @@
         StatusBar.backgroundColorByHexString('#99cc00');
         document.addEventListener('backbutton', onBackKeyDown, false);
         document.addEventListener("hidekeyboard", Keyboardisoff, false);
+        document.addEventListener("pause", onPause, false);
+        document.addEventListener("resume", onResume, false);
         window.connectionInfo = new ConnectionApp();
 		window.connectionInfo.checkConnection();
         app.analyticsService.viewModel.monitorStatusCheck();
         navigator.splashscreen.hide();
+    };
+    
+    var onPause = function(){
+        alert("pause");
+    };
+    
+    var onResume = function(){
+      alert("resume");  
     };
 
     // Handle "deviceready" event

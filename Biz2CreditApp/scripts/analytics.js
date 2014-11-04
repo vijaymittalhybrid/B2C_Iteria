@@ -2,8 +2,8 @@
     var AnalyticsModel,
         app = global.app = global.app || {};
     
-    var productId = "12ee882498d84d6f960f0ceb5f22afc3",
-        version   = "1.5";
+    /*var productId = "12ee882498d84d6f960f0ceb5f22afc3",
+        version   = "1.5";*/
     
     AnalyticsModel = kendo.data.ObservableObject.extend({
         
