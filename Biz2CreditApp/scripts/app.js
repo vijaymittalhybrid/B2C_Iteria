@@ -7,7 +7,7 @@
             e.preventDefault();
             navigator.notification.confirm('Do you really want to exit?', function (confirmed) {
             if (confirmed === true || confirmed === 1) {
-                app.analyticsService.viewModel.monitorStop("Exit.User exit by Device Backbutton");
+                app.analyticsService.viewModel.monitorStop("User exit by Device Backbutton");
             	navigator.app.exitApp();
             }
 
@@ -42,7 +42,8 @@
       $("#tabstrip-sign-up").find(".km-scroll-container").css("-webkit-transform", "translate3d(0px, 0px, 0px)");
     };
 
-    var onDeviceReady = function() {
+    var onDeviceReady = function(e) {
+        console.log(e)
         StatusBar.overlaysWebView(false);
         StatusBar.backgroundColorByHexString('#99cc00');
         document.addEventListener('backbutton', onBackKeyDown, false);
@@ -52,18 +53,14 @@
         window.connectionInfo = new ConnectionApp();
 		window.connectionInfo.checkConnection();
         app.analyticsService.viewModel.monitorStatusCheck();
-        //app.analyticsService.viewModel.getGeoLocation();
-        console.log(navigator);
         navigator.splashscreen.hide();
     };
     
-    var onPause = function(){
-        alert("pause");
-        app.analyticsService.viewModel.monitorStop();
+    var onPause = function(e){
+        app.analyticsService.viewModel.monitorStop("User exit by other way");
     };
     
     var onResume = function(){
-           alert("resume");
       app.analyticsService.viewModel.monitorStart();
     };
 

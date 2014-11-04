@@ -6,31 +6,17 @@
         version   = "1.5";
     
     AnalyticsModel = kendo.data.ObservableObject.extend({
-        
-       userStatus:function()
-       {   
-           var loginStatus = localStorage.getItem("isLoggedIn");
-           
-           if(loginStatus === 'true' || loginStatus === true)
-           {
-               app.analyticsService.viewModel.trackFeature("AppOpen&login_FirstTime"+"."+localStorage.getItem("userEmail"));
-               app.analyticsService.viewModel.setInstallationInfo(localStorage.getItem("userEmail"));
-           }
-           else
-           {
-               app.analyticsService.viewModel.trackFeature("AppLoad_FirstTime.Unknown User");
-               app.analyticsService.viewModel.setInstallationInfo("Not Register");
-           }
-       },
-        
+       
        monitorStatusCheck:function()
        {
+          
            var factory = window.plugins.EqatecAnalytics.Factory;
            
            factory.IsMonitorCreated(function(result){
                if(result.IsCreated === 'true' || result.IsCreated === true)
                {
                    console.log("monitor has been create");
+                   app.analyticsService.viewModel.getStatus();
                }
                else
                {
@@ -44,7 +30,6 @@
         {
             var factory = window.plugins.EqatecAnalytics.Factory;
             var settings = factory.CreateSettings(productId,version);
-            var monitor = window.plugins.EqatecAnalytics.Monitor;
             
             settings.TestMode = 'true';
             settings.LoggingInterface = {
@@ -64,7 +49,7 @@
                 function()
                 {
                     console.log("Monitor create");
-                    app.analyticsService.viewModel.monitorStart(monitor);
+                    app.analyticsService.viewModel.monitorStart();
                 },
                 function(msg)
                 {
@@ -73,32 +58,46 @@
             )
         },
         
-        monitorStart:function(monitor)
+        monitorStart:function()
         {
-            alert("monitor start");
+            var monitor = window.plugins.EqatecAnalytics.Monitor;
             monitor.Start(function()
             {
                 console.log('monitor start');
-                
-                app.analyticsService.viewModel.userStatus();
+                app.analyticsService.viewModel.userStatus("AppLoad_Login");
             });
         },
         
         monitorStop:function(stopReason)
         {   
             var monitor = window.plugins.EqatecAnalytics.Monitor;
-            app.analyticsService.viewModel.trackFeature(stopReason);
+            app.analyticsService.viewModel.trackFeature("Exit."+stopReason);
             monitor.Stop(function()
             {
                 console.log('monitor stop');
-                alert("monitor stop");
             });
         },
         
-        trackFeature:function(trackfeature)
+        userStatus:function(operation)
+        {   
+           var loginStatus = localStorage.getItem("isLoggedIn");
+           
+           if(loginStatus === 'true' || loginStatus === true)
+           {
+               app.analyticsService.viewModel.trackFeature(operation+"."+localStorage.getItem("userEmail"));
+               app.analyticsService.viewModel.setInstallationInfo(localStorage.getItem("userEmail"));
+           }
+           else
+           {
+               app.analyticsService.viewModel.trackFeature(operation+".Unknown User");
+               app.analyticsService.viewModel.setInstallationInfo("Not Register");
+           }
+        },
+        
+        trackFeature:function(feature)
         {
             var monitor = window.plugins.EqatecAnalytics.Monitor;
-            monitor.TrackFeature(trackfeature);
+            monitor.TrackFeature(feature);
         },
         
         setInstallationInfo:function(installationId)
@@ -107,14 +106,19 @@
             monitor.SetInstallationInfo(installationId);
         },
         
-        getStatus:function(app){
+        getStatus:function(){
+            
             var monitor = window.plugins.EqatecAnalytics.Monitor;
            
             monitor.GetStatus(function(status) {
 
                 if(status.IsStarted === true)
                 {
-                    console.log("monitor start");
+                    app.analyticsService.viewModel.userStatus("AppLoad_AfterLogout");
+                }
+                else
+                {
+                    app.analyticsService.viewModel.monitorStart(monitor);
                 }
             });
         },
