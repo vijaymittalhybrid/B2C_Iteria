@@ -120,7 +120,12 @@
         },
         
         getGeoLocation:function(){
-            alert("hi");
+            if (navigator.geolocation) {
+            console.log("ok");
+            } else { 
+            console.log("no");
+            }
+
         }
     });
     app.analyticsService = {

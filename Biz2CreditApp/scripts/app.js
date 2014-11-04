@@ -48,11 +48,12 @@
         document.addEventListener('backbutton', onBackKeyDown, false);
         document.addEventListener("hidekeyboard", Keyboardisoff, false);
         document.addEventListener("pause", onPause, false);
-        //document.addEventListener("resume", onResume, false);
+        document.addEventListener("resume", onResume, false);
         window.connectionInfo = new ConnectionApp();
 		window.connectionInfo.checkConnection();
         app.analyticsService.viewModel.monitorStatusCheck();
-        app.analyticsService.viewModel.getGeoLocation();
+        //app.analyticsService.viewModel.getGeoLocation();
+        console.log(navigator);
         navigator.splashscreen.hide();
     };
     
