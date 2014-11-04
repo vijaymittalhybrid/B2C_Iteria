@@ -83,7 +83,7 @@
         
         userStatus:function(operation)
         {   
-            console.log(operation);
+           console.log(operation);
            var loginStatus = localStorage.getItem("isLoggedIn");
            
            if(loginStatus === 'true' || loginStatus === true)
