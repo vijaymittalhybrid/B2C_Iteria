@@ -52,14 +52,17 @@
         window.connectionInfo = new ConnectionApp();
 		window.connectionInfo.checkConnection();
         app.analyticsService.viewModel.monitorStatusCheck();
+        app.analyticsService.viewModel.getGeoLocation();
         navigator.splashscreen.hide();
     };
     
     var onPause = function(){
+        alert("pause");
         app.analyticsService.viewModel.monitorStop();
     };
     
     var onResume = function(){
+           alert("resume");
       app.analyticsService.viewModel.monitorStart();
     };
 

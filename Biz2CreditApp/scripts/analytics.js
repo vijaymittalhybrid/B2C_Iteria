@@ -116,6 +116,10 @@
                     console.log("monitor start");
                 }
             });
+        },
+        
+        getGeoLocation:function(){
+            alert("hi");
         }
     });
     app.analyticsService = {
