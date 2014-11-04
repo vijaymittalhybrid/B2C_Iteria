@@ -56,11 +56,11 @@
     };
     
     var onPause = function(){
-        alert("pause");
+        app.analyticsService.viewModel.monitorStop();
     };
     
     var onResume = function(){
-      alert("resume");  
+      app.analyticsService.viewModel.monitorStart();
     };
 
     // Handle "deviceready" event
