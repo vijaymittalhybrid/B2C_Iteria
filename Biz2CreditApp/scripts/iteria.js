@@ -236,6 +236,10 @@
             dataParam['authorization']=$("#authorization").is(':checked') ? 1 : 0;
             dataParam['loanpro_auth']=$("#loanpro_auth").is(':checked') ? 1 : 0;
             console.log(dataParam);
+            app.iteriaService.viewModel.appToNavigate();
+        },
+        appToNavigate:function()
+        {
             apps.navigate("views/documentPending.html");
         },
         addDynamicBind:function(num)

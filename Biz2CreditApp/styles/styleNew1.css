@@ -1,0 +1,143 @@
+/*copy css from here rahman*/
+/*................css update 15.10.2012................*/
+
+.Listing-download{width:620px;}
+.Listing-download h1{font-size:20px; color:#999999;  font-family: 'LucidaSansRegular'; font-weight:normal; padding:0 0 30px 0;}
+.Listing-download h2{font-size:14px; color:#8dc242; font-family:'LucidaSansDemiboldRoman'; padding:0 0 15px 0;}
+.listing-container{border-top:solid 1px #f0f0f0; height:450px; overflow: scroll; overflow-x:hidden; padding:0 15px 0 20px}
+.listing-container .rowD{padding:9px 0;border-bottom:solid 1px #f0f0f0;}
+.listing-container .rowD .lft-List{float:left; width:440px;}
+.listing-container .rowD .lft-List .Icon01{ float:left; margin-right:8px;}
+.listing-container .rowD .lft-List .des-list{ float:left; margin-right:0px; font-size:12px; color:#999999; padding:7px 0 0 0;}
+
+.listing-container .rowD .rht-List{float:right; width:125px; padding-top:5px}
+.toggle-table a.delete01{float:right; width:27px; height:23px; background: url(../images/delIcon002.png) no-repeat 0 0; display:block; text-indent:-99999px; border: none; cursor:pointer;  line-height:0; text-align:left;}
+.toggle-table  a.delete01.active{background-position:0 -36px;}
+.toggle-table  a.delete01:hover{background-position:0 -36px;}
+.toggle-table a.downloadBtn {float:right; width:86px; height:23px; background: url(../images/download-Btn-list.gif) no-repeat 0 0; display:block; text-indent:-99999px; border: none; cursor:pointer;  line-height:0; margin-left:5px; margin-top:0;text-align:left;}
+
+.toggle-table{border-bottom:solid 1px #e9e8e8;}
+.toggle-table tr.row002  td{padding:9px 0 9px 0;color:#999999;font-family:'LucidaSansDemiboldRoman'; }
+.toggle-table tr.row002  td a{color:#8dc242; font-family:'LucidaSansDemiboldRoman'; }
+.toggle-table tr.row002  td  .no{background: none repeat scroll 0 0 hsl(0, 0%, 60%);border-radius: 14px 14px 14px 14px; color: hsl(0, 0%, 100%); display: inline-block;font-family: 'LucidaSansRegular';font-size: 11px; font-weight: normal; height: 10px; line-height: 10px; padding: 4px; text-align: center; width: 12px;margin: 4px 11px 0 10px;}
+.up-doc{ width:73px; height:24px; background: url(../images/upload-doc01.gif) no-repeat 0 0; display:block; text-indent:-99999px; border: none; cursor:pointer;  line-height:0; margin-right:5px;}
+.line-y{ height:21px; display:inline-block; border-right:solid 1px #d9d8d8; margin-right:10px}
+.toggle-table tr td ul li {padding:13px 0 4px 0;border-bottom:solid 1px #e9e8e8; color:#999999; font-family: 'LucidaSansRegular';font-size: 12px; overflow:hidden}
+.toggle-table a.shareIC{float:right; width:72px; height:23px; background:url(../images/shareIC01.gif) no-repeat 0 0; display:block; text-indent:-99999px;border: none;cursor:pointer;  line-height:0; margin-left:5px; margin-top:0;text-align:left; margin-right:5px;}	
+
+
+.downLoadAll{float:right; width:102px; height:24px; background:url(../images/downloaDAll.gif) no-repeat 0 0; display:block; text-indent:-99999px;border: none;cursor:pointer;  line-height:0; margin-left:5px; margin-top:0;text-align:left; margin-right:5px;}
+.ShareAllFile{float:right; width:102px; height:24px; background:url(../images/share-all-files.gif) no-repeat 0 0; display:block; text-indent:-99999px;border: none;cursor:pointer;  line-height:0; margin-left:5px; margin-top:0;text-align:left; margin-right:5px;}
+.scrollDiv01{ max-height:206px; overflow: auto; overflow-x:hidden;}
+
+.toggle-table tr td ul li .ic-doc{float:left; width:27px; margin-right:10px; height:32px;}
+.toggle-table tr td ul li .folder{background:url(../images/doc-icon-folder.png) no-repeat left;}
+.toggle-table tr td ul li .doc{background:url(../images/doc-icon-doc.png) no-repeat left;}
+.toggle-table tr td ul li .html{background:url(../images/doc-icon-doc.png) no-repeat left; }
+.toggle-table tr td ul li .htm{background:url(../images/doc-icon-doc.png) no-repeat left;}
+.toggle-table tr td ul li .pdf{background:url(../images/doc-icon-pdf.png) no-repeat left;}
+.toggle-table tr td ul li .xls{background:url(../images/doc-icon-xls.png) no-repeat left;}
+.toggle-table tr td ul li .png{background:url(../images/doc-icon-jpeg.png) no-repeat left;}
+.toggle-table tr td ul li .gif{background:url(../images/doc-icon-jpeg.png) no-repeat left;}
+.toggle-table tr td ul li .jpg{background:url(../images/doc-icon-jpeg.png) no-repeat left;}
+.toggle-table tr td ul li .eps{background:url(../images/doc-icon-jpeg.png) no-repeat left; }
+.toggle-table tr td ul li .docx{background:url(../images/doc-icon-docx.png) no-repeat left;}
+.toggle-table tr td ul li .xlsx{background:url(../images/doc-icon-xlsx.png) no-repeat left;}
+.toggle-table tr td ul li .ppt{background:url(../images/doc-icon-ppt.png) no-repeat left;}
+.toggle-table tr td ul li .txt{background:url(../images/doc-icon-text.png) no-repeat left;}
+.toggle-table tr td ul li .pptx{background:url(../images/doc-icon-pptx.png) no-repeat left;}
+
+
+/* Devendra Singh (19-11-2013) */ 
+.loan-match-doc-list {position:relative;}
+.loan-match-doc-list .arrowImg {height: 24px;left: 474px;position: absolute;top: -16px;width: 23px;}
+.loan-match-doc-list .toggleBlock{margin-top:5px;height: auto; margin-bottom:10px;}
+.loan-match-doc-list .toggle-head {background: none repeat scroll 0 0 #ECECEC;color: #666666;cursor: pointer;font-family: 'LucidaSansDemiboldRoman';font-size: 14px;padding: 6px 0 6px 10px;position: relative;}
+.loan-match-doc-list .toggleUp{ background: url(../images/b2c-req-doc-arrow-down.png) 5px 8px no-repeat #ECECEC; margin: 0 0 0 -12px; color: #666666 !important; display:inline-block; width:96.7%; cursor: pointer;font-family: 'LucidaSansDemiboldRoman';font-size: 14px;padding:6px 0 6px 25px;position: relative;}
+.loan-match-doc-list .toggleUp:hover  {text-decoration: none;}
+.loan-match-doc-list .toggleDown{ background: url(../images/b2c-req-doc-arrow-up.png) 5px 7px no-repeat #ECECEC; margin: 0 0 0 -12px; color: #666666 !important; display:inline-block; width:96.7%; cursor: pointer;font-family: 'LucidaSansDemiboldRoman';font-size: 14px;padding:6px 0 6px 25px;position: relative;}
+.loan-match-doc-list .toggleDown:hover  {text-decoration: none;}
+.loan-match-doc-list .toggleWrap {margin-bottom: 20px;}
+.loan-match-doc-list .toggle-table table tr td {border:none!important;padding:0px!important;}
+.Toggle-drop .scrollDiv01{  background: none repeat scroll 0 0 #FFFFFF;display: block;padding-left: 7px;width: auto;}
+
+
+.casemanager-req-lender-doc-list {}
+.casemanager-req-lender-doc-list table td{background: none repeat scroll 0 0 #E1E1E1;border: 0 none;font-size: inherit;height: auto;padding: 0;}
+.casemanager-req-lender-doc-list .casemanager-match-doc-list {position:relative;}
+.casemanager-req-lender-doc-list .casemanager-match-doc-list .arrowImg {height: 24px;left: 474px;position: absolute;top: -16px;width: 23px;}
+.casemanager-req-lender-doc-list .casemanager-match-doc-list .toggleBlock{margin-top:5px;height: auto; margin-bottom:10px;}
+.casemanager-req-lender-doc-list .casemanager-match-doc-list .toggle-head {background: none repeat scroll 0 0 #ECECEC;color: #666666;cursor: pointer;font-family: 'LucidaSansDemiboldRoman';font-size: 14px;padding: 6px 0 6px 10px;position: relative;}
+.casemanager-req-lender-doc-list .casemanager-match-doc-list .toggleUp{ background: url('../images/b2c-req-doc-arrow-down.png') 5px 8px no-repeat #ECECEC; margin: 0 0 0 0px; color: #666666 !important; display:inline-block; width:95.7%; cursor: pointer;font-family: 'LucidaSansDemiboldRoman';font-size: 14px;padding:6px 0 6px 43px;position: relative;}
+.casemanager-req-lender-doc-list .casemanager-match-doc-list .toggleUp:hover  {text-decoration: none;}
+.casemanager-req-lender-doc-list .casemanager-match-doc-list .toggleDown{ background: url('../images/b2c-req-doc-arrow-up.png') 5px 7px no-repeat #ECECEC; margin: 0 0 0 0px; color: #666666 !important; display:inline-block; width:95.7%; cursor: pointer;font-family: 'LucidaSansDemiboldRoman';font-size: 14px;padding:6px 0 6px 43px;position: relative;}
+.casemanager-req-lender-doc-list .casemanager-match-doc-list .toggleDown:hover  {text-decoration: none;}
+.casemanager-req-lender-doc-list .casemanager-match-doc-list .toggleWrap {margin-bottom: 20px;}
+.casemanager-req-lender-doc-list .casemanager-match-doc-list .toggle-table table tr td {border:none!important;padding:0px!important;}
+.casemanager-req-lender-doc-list .casemanager-match-doc-list .Toggle-drop .scrollDiv01{  background: none repeat scroll 0 0 #FFFFFF;display: block;padding-left: 7px;width: auto;}
+
+
+/* Sanjay (06-03-2014) */ 
+.documentList{ width:981px; margin: auto;}
+.documentList .topHead{background:url(../images/thHeader.png) no-repeat 0 0; height:50px; padding:10px 18px 0 18px}
+.documentList .topHead p{float:left; width:80%;padding:0px 0 0 0; margin:0 0 8px 0; color:#666; font-size:14px;}
+.documentList .topHead p.back{float:right; width:15%; text-align:right; padding:10px 0 0 0; margin:0 0 0 0}
+.documentList .topHead p.back a{color:#8ec140; text-decoration:none;}
+.documentList .wrap-content{background:#f2f0f1; padding:18px;}
+.documentList .wrap-content .accord_wrap{ background:#fff; border:solid 1px #dbdbdb;border-radius: 4px; margin-bottom:40px}
+.documentList .wrap-content h2{padding:13px 20px 10px 18px; font-size:14px; color:#666;font-family:'LucidaSansDemiboldRoman'; cursor:pointer; background:url('layout/togIc.png') no-repeat right 14px; margin:0;}
+.documentList .wrap-content  .rows{padding:0 0 0 0; border-top:solid 1px #e5e5e5; display:none}
+.documentList .wrap-content  .row{ border-bottom:solid 1px #f5f5f5; padding:9px 18px 9px 18px}
+.documentList .wrap-content  .row .num{ float:left; width:27px; border-right:solid 1px #e5e5e5; margin-right:11px;  margin-top: 3px;}
+.documentList .wrap-content  .row .num span{ background:#999999; text-align:center; color:#fff; border-radius: 10px; font-size:10px; width:16px; display:block; margin:2px 0 0 0; }
+.documentList .wrap-content  .row .name{ float:left; width:560px;font-family:'LucidaSansDemiboldRoman'; color:#666;  margin-top: 3px;}
+.documentList .wrap-content  .row .name a{color:#8ec140; text-decoration:none}
+.documentList .wrap-content  .row .upload{ float:right; width:250px;}
+.documentList .wrap-content  .row .upload a{ float:right; color:#fff;  background:#999999; text-decoration:none;  font-size:11px; padding:5px 10px 5px 10px;border-radius: 4px;font-family:'LucidaSansDemiboldRoman';}
+.documentList .wrap-content  .row .name a:hover{ text-decoration: underline}
+.noteList{ background:url(../images/notelist.png) no-repeat 0 0; padding:0 0 0 24px; font-size:12px; color:#666;margin-top:0;}
+.documentList .wrap-content h2.off{ background-position:right -35px;}
+.sub-row {border-bottom:solid 1px #f5f5f5; padding:9px 18px 9px 18px}
+.sub-row a.downloadBtn {background: url(../images/download-Btn-list.gif) no-repeat 0 0; border: medium none;cursor: pointer; display: block; float: right; height: 23px; line-height: 0;text-align: left;text-indent: -99999px; width: 86px; float:right; margin-left:10px;}
+.sub-row a.shareIC {background: url(../images/shareIC01.gif) no-repeat 0 0;border: medium none;cursor: pointer;display: block; float: right;height: 23px;
+line-height: 0;margin-left: 10px;  text-align: left; text-indent: -99999px; width: 72px; float:right}
+.documentList .file-icon{float:left;height: 32px; margin-right:10px;width:27px;}
+.documentList .file-name{float:left; margin-right:10px;width:500px; color:#999; font-size:12px; padding:7px 0 0 0}
+.documentList .buttonSet{float:right;width:200px; padding-top:4px;}
+.documentList .sub-row .folder {background: url(../images/doc-icon-folder.png) no-repeat  left center;}
+.documentList .sub-row .doc {background: url(../images/doc-icon-doc.png) no-repeat  left center;}
+.documentList .sub-row .html {background: url(../images/doc-icon-doc.png) no-repeat  left center;}
+.documentList .sub-row .htm {background: url(../images/doc-icon-doc.png) no-repeat  left center;}
+.documentList .sub-row .pdf { background: url(../images/doc-icon-pdf.png) no-repeat  left center;}
+.documentList .sub-row .xls {background: url(../images/doc-icon-xls.png) no-repeat  left center;}
+.documentList .sub-row .png {background: url(../images/doc-icon-jpeg.png) no-repeat left center;}
+.documentList .sub-row .gif {background: url(../images/doc-icon-jpeg.png) no-repeat left center;}
+.documentList .sub-row .jpg {background: url(../images/doc-icon-jpeg.png) no-repeat left center;}
+.documentList .sub-row .eps {background: url(../images/doc-icon-jpeg.png) no-repeat  left center;}
+.documentList .sub-row .docx {background: url(../images/doc-icon-docx.png) no-repeat left center;}
+.documentList .sub-row .xlsx {background: url(../images/doc-icon-xlsx.png) no-repeat left center;}
+.documentList .sub-row .ppt {background: url(../images/doc-icon-ppt.png) no-repeat left center;}
+.documentList .sub-row .txt {background: url(../images/doc-icon-text.png) no-repeat left center;}
+.documentList .sub-row .pptx {background: url(../images/doc-icon-pptx.png) no-repeat left center;}
+.filesBlock{ display:none;}
+.text2{ float:left;}
+#documentSubmit{position: relative;top: -14px;}
+
+.textanswer{background: #FFFFFF;border: 1px solid #ccc;border-radius: 5px;color: #999999;font-family: Arial,Helvetica,sans-serif;font-size: 13px;height: 22px;margin-right: 10px;padding: 3px 8px;width: 450px; margin-top:5px;}
+.toggle-table .btnsave{ background:#8DC242; border-radius:4px; color:#fff; text-align:center; font-size:13px; font-family:'LucidaSansDemiboldRoman'; padding:4px 15px; margin-top:27px; cursor:pointer;}
+
+/*...css view button date  5march2014...*/
+.toggle-table a.previewBtn{float:right; width:27px; height:23px; background: url(../images/view002.png) no-repeat 0 0; display:block; text-indent:-99999px; border: none; cursor:pointer;  line-height:0; text-align:left;   margin-right: 5px;}
+.toggle-table  a.previewBtn.active{background-position:0 -36px;}
+.toggle-table  a.previewBtn:hover{background-position:0 -36px;}
+#DocumentsList.complete_loan_application tr.future-row.open td .scrollDiv01{ width:auto}
+#DocumentsList.complete_loan_application .casemanager-req-lender-doc-list .casemanager-match-doc-list{ padding-top:6px;}
+#DocumentsList.complete_loan_application .toggleWrap ul li{padding-top: 10px; }
+#DocumentsList.complete_loan_application  .toggle-table tr td ul li{ padding:1px 0px 7px 8px}
+
+
+
+
+
+
+

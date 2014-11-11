@@ -1,10 +1,88 @@
-<!DOCTYPE html>
+<div data-role="view" id="document-pending" data-model="app.documentService.viewModel" data-show="app.documentService.viewModel.show">
+    <div data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title">
+                <div class="matches-logo">
+                    <a href="#tabstrip-home">Back</a>
+                </div>
+            </span>
+        </div>
+    </div>
+    <div  data-role="content">
+        <div class="documentList">
+            <div id="matchDocList" class="wrap-content ">
+                <div class="accord_wrap">
+                    <h2 class="off">Please upload required documents</h2>
+                    <div class="rows" style="display:none">
+                        <div class="row clearfix">
+                            <div class="num">
+                                <span>1</span>
+                            </div>
+                            <div class="name">
+                                Credit Review Acknowledgement Itria
+                                <div class="text1">
+                                    <form action="index.php?option=com_financialnew&amp;task=b2stask" method="post" name="b2sform" id="b2sformid">
+                                        <input name="oldtask" type="hidden" value="uploaddoc">
+                                        <input name="matchid" type="hidden" value="88202">
+                                        <input name="cust_id" type="hidden" value="94356">
+                                        <input name="appid" type="hidden" value="72115">
+                                        <input name="b2sid" type="hidden" value="1552">
+                                        <input name="refname" type="hidden" value="itria-cra">
+                                        <input name="docketid" type="hidden" value="4666">
+                                        <input name="Itemid" type="hidden" value="110">
+                                        <input name="docid" type="hidden" value="149">
+                                        <input name="doctype" type="hidden" value="0">
+                                        <input name="status" type="hidden" value="sent">
+                                    </form>
+                                    <span class="text2">
+                                        <a href="javascript:void(0);" id="esignAnchor" onclick="sendEmailToUsr()">Resend esign document</a>&nbsp;&nbsp;
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="docuploaded">
+                                        <a href="https://www.biz2beta.com/components/com_financialnew/create_term.php?appid=72115&amp;lenderorg_id=334">Download document for wet signature</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="upload">
+                                <a href="https://www.biz2beta.com/index.php?option=com_docfile&amp;task=matchUploadDoc&amp;custid=94356&amp;appid=72115&amp;docid=149&amp;doctype=0&amp;matchid=88202" class="active appDocFile">Upload New/Select Existing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        this is a document pending page
-    </body>
-</html>
+                <div class="accord_wrap">
+                    <h2>Please upload post-offer documents (Currently optional)</h2>
+                    <div class="rows">
+                        <div class="row clearfix">
+                            <div class="num">
+                                <span>1</span>
+                            </div>
+                            <div class="name">Copy of Drivers License</div>
+                            <div class="upload">
+                                <a href="https://www.biz2beta.com/index.php?option=com_docfile&amp;task=matchUploadDoc&amp;custid=94356&amp;appid=72115&amp;docid=1&amp;doctype=0&amp;matchid=88202" class="active  appDocFile">Upload New/Select Existing</a>
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="num">
+                                <span>2</span>
+                            </div>
+                            <div class="name">Proof of Payment</div>
+                            <div class="upload">
+                                <a href="https://www.biz2beta.com/index.php?option=com_docfile&amp;task=matchUploadDoc&amp;custid=94356&amp;appid=72115&amp;docid=78&amp;doctype=0&amp;matchid=88202" class="active  appDocFile">Upload New/Select Existing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <button style="background: none repeat scroll 0 0 #999;border: 0 none;border-radius: 6px 6px 6px 6px;color: #FFFFFF;font-family: 'LucidaSansDemiboldRoman';font-size: 14px;font-weight: normal;height: 25px;margin-right: 10px;  padding: 0 10px; display: inline-block;" id="btnChoice1">Submit</button>
+                   
+                <div style="font-size: 10px;margin:5px;"><i>The Submit button will be activated after uploading the required documents.</i></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+</script>
+</div>
