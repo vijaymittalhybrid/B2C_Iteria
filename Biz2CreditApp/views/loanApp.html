@@ -5,7 +5,7 @@
                 <a data-role="backbutton" class="backButton">Back</a>
             </span>
             <a data-bind="click: refreshViewLoan,invisible: showrefreshLoan" class="refreshloan docs-refresh">refresh</a>
-            
+
             <a data-bind="click: refreshViewLoan,visible: showrefreshLoan" class="refresh-loading docs-refresh">refresh</a>
             <a data-align="right" data-rel="popover" href="#popover-people" data-role="button" class="docs-popup"></a>
         </div>
@@ -14,6 +14,7 @@
         <div class="recent-activity clearfix">
             <div class="rcnt-actty">Recent Loan activity</div>
             <div class="applyFrshLon">
+                <a data-role="button" id="applyIteria" data-bind="click:applyIteriaLoan">Apply for Iteria</a>
                 <a data-bind="click: applyFreshLoan" data-mode="fresh">Apply for a fresh loan</a>
             </div>
         </div>
@@ -28,7 +29,7 @@
                     <a harf="#">
                         Ended <span data-bind="text: endedApp"></span>
                     </a>
-                    
+
                 </li>
                 <li class="sevd_icon" data-bind="click: savedAppClick">
                     <a harf="#">
@@ -38,7 +39,9 @@
             </ul>
             <div>
                 <div class="tabOne withMatch" data-bind="visible: postAppTab">
-                    <div class="actArw"><img src="styles/images/loan-app-arrow.png"></div>
+                    <div class="actArw">
+                        <img src="styles/images/loan-app-arrow.png">
+                    </div>
                     <div class="head clearfix">
                         <span data-bind="visible: postApp">Application #</span><span data-bind="visible: postApp">No. of Matches</span><span data-bind="visible: postApp">Date</span>
                     </div>
@@ -47,62 +50,182 @@
             </div>
             <div>
                 <div class="tabOne" data-bind="visible: endedAppTab">
-                    <div class="actArw"><img src="styles/images/loan-app-arrow.png"></div>
+                    <div class="actArw">
+                        <img src="styles/images/loan-app-arrow.png">
+                    </div>
                     <div class="head clearfix">
                         <span data-bind="visible: endedApp">Application #</span><span data-bind="visible: endedApp">Date</span>
                     </div>
                     <ul class="tabui" data-bind="source: endedAppList" data-template="endedAppList-template"></ul>
-                    
+
                 </div>
             </div>
             <div>
                 <div class="tabOne" data-bind="visible:savedAppTab">
-                    <div class="actArw"><img src="styles/images/loan-app-arrow.png"></div>
+                    <div class="actArw">
+                        <img src="styles/images/loan-app-arrow.png">
+                    </div>
                     <div class="head clearfix">
                         <span data-bind="visible: savedApp">Application #</span><span data-bind="visible: savedApp">Date</span>
                     </div>
                     <ul class="tabui" data-bind="source: savedAppList" data-template="savedAppList-template"></ul>
-                    
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!--Iteria Modalview layout-->
+<div data-role="modalview" data-modal="false" id="iteriaModalView" data-model="app.iteriaService.viewModel"  style="width:95%;height:600px;">
+    <div data-role="header">
+        <a data-role="button"  data-click="closeIteriaModalView">Close</a>
+    </div>
+    <div data-role="content">
+        <form name="form1">
+            <div id='applypopup' style='padding:10px; background:#fff;'>
+                <div class="titad" style="margin-top: 30px;">Please fill in the following additional information:</div>
+                <div class="titad ownssn">Social security number:</div>
+                <div class="titad_fld" >
+                    <div class="rows" id="controlField">
+                    </div>
+                </div>
+
+                <div class="rows options">
+                    <p>
+                        <input name = "authorization" id = "authorization" type="checkbox" data-bind="value:authorization"/>
+                        I accept to digitally sign the agreement and wish to submit my application for further review.
+                    </p>
+                    <p>
+                        <input name='loanpro_auth' id='loanpro_auth' type="checkbox" data-bind="value:loanpro_auth"/>
+                        I accept to the
+                        <a class="reld_info">
+                            Business Finance Services Terms & Conditions
+                        </a> and choose to submit my application for further review.
+                    </p>
+                    <div class="tooltip" >
+                        <span class="tpar"></span>
+                        <div>
+                            <div style=" height:140px; overflow-y:scroll;">
+                                <h6 style="color:#87B316;">
+                                    Business Finance Services Terms & Conditions
+                                </h6>
+                                <p>Last Updated: May 7, 2014</p>
+
+                                <p>
+                                    The business and its Owner(s)/Officer(s) identified above (collectively, "<strong>Applicant</strong>") have each read, understand and accept Biz2credit's Business Finance Services Terms & Conditions set forth below and, for good and valuable consideration, including without limitation access to and/or use of Biz2Credit's Platform and Business Finance Services, expressly agree that:
+                                </p>
+
+                                <p>
+                                    (1) All information and documents of any kind provided directly or indirectly to Biz2Credit Inc. ("<strong>Biz2Credit</strong>") and/or Funders (as defined) in connection with Applicant's Funding Qualification Form or any subsequent commercial loan or other business funding product application (collectively, "<strong>Application</strong>"), including without limitation credit reports, credit score, credit history, investigative reports, consumer reports, statements from creditors or financial institutions, tax returns and credit card statements regarding Applicant, and any other business or personal information that may be requested by Funders (collectively, "<strong>Information and Documents</strong>"), are true, accurate and complete.
+                                </p>
+
+                                <p>(2) Applicant will immediately notify Biz2Credit of any change in any of such Information and Documents or Applicant's financial condition.</p>
+
+                                <p>
+                                    (3) Applicant expressly authorizes (i) Biz2Credit to disclose any or all of such Information and Documents to any bank, financial institution, factor, company providing merchant cash advances or receivables financing or other business funding, or other Funder (collectively, "<strong>Funder</strong>") and/or other third parties that may be involved in the provision of commercial loans (collectively, "<strong>Funder Parties</strong>") and (ii) each Funder to disclose any or all of such Information and Documents, and share any or all of such Information and Documents with other Funder Parties in connection with such potential transactions.
+                                </p>
+
+                                <p>(4) Biz2Credit, and each Funder and Funder Party, shall be entitled to rely upon the accuracy and completeness of such Information and Documents provided by or on behalf of Applicant, and Biz2Credit is not responsible for any inaccuracy contained therein that may be incorporated into an Application. </p>
+
+                                <p>(5) Biz2Credit and each Funder is expressly authorized to request, receive and forward to any Funder and/or Funder Party, as applicable, any such Information and Documents, any verification of any or all Information and Documents, or any other information or documentation as either of them may deem necessary in connection with the Application.</p>
+
+                                <p>(6) Applicant hereby waives and releases any claims against Biz2Credit and each Funder and Funder Party or any provider of credit reports, credit score or other information-provider, together with their respective and each of their respective representatives, officers, directors, employees, agents, affiliates, successors and assigns arising from any act or omission relating to the requesting, receiving or release of any such Information and Documentation or their incorporation into an Application. </p>
+
+                                <p>
+                                    (7) By submitting any Funding Qualification Form or other Application, or by accessing or using any Business Finance Services, Applicant expressly acknowledges and agrees that <strong>Biz2Credit does not represent, warrant or guarantee that Applicant or its business will qualify for or obtain a business loan or other business funding product.</strong> In all cases, credit, lending and funding decisions are made only by the lender or other funding provider at their sole discretion.
+                                </p>
+                                <p>(8) Applicant hereby acknowledges and agrees that no Application will be deemed completed under applicable law unless and until this has been determined by the Funder to whom it was submitted, at Funder's discretion in accordance with its customary business practices. </p>
+
+                                <p>
+                                    (9) Applicant has reviewed and understands Biz2Credit's
+                                    <a href="/terms-of-use.html" target="_blank">Terms of Service</a> and Terms Agreement referenced therein (collectively, the "<strong>Terms</strong>"), which is a legally binding agreement between you and Biz2Credit, and hereby accepts and agrees to the Terms, which include these Business Finance Services Terms & Conditions.
+                                </p>
+
+                                <p>
+                                    (10) Applicant understands that each Application submitted is subject to the terms of use, terms of service or other online terms and conditions agreement of each Funder to whom an Application is submitted (collectively, "<strong>Funder Terms</strong>"), and Applicant hereby accepts and agrees to such Funder Terms, all of which are hereby incorporated into these Business Finance Services Terms & Conditions.
+                                </p>
+
+                                <p>(11) Each Owner/Officer identified above represents and warrants to Biz2Credit, intending to be legally bound, that he or she is authorized to sign this form on behalf of Applicant. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="titad_btn">
+                    <input name="submit" type="submit" id="btnApply" data-role="button" value="Submit" data-name="Submit" data-bind="click:submitSSNValue" class="BTgren">
+                    
+                </div>
+
+                <div style="display:none; float: right; margin-right: 395px; /*margin-top: -31px;*/ z-index: 100000;" id="loader">
+                    <img src="../images/transUnionLoader.gif" width="30px;" height="30px;">
+                </div>
+            </div>
+            <input type="hidden" name="custid" data-bind="value:custid" value="94356" />
+            <input type="hidden" name="appid" data-bind="value:appid" value="70385" />
+            <input type="hidden" name="matchID" data-bind="value:matchID" value="82773" />
+            <input type="hidden" name="hnowners" data-bind="value:hnowners" id="hnowners" value="1" />
+        </form>
+    </div>
+</div>
+
+<script>
+    function closeIteriaModalView(e) {
+        var modalView = e.sender.element.closest("[data-role=modalview]").data("kendoMobileModalView");
+        modalView.close();
+    }
+    
+</script>
+
+<!---->
+
 <script type="text/x-kendo-template" id="postAppList-template">
     #var fDate = updatetime #
-    #var mCount = matchCount #
+    #var mCount = matchCount
+    
+    #
     <li class="clearfix">
-        <span>BIZ#: fid #</span>
-        #if(mCount === 1 ){#
-             <span>1 Match </span>
-        #}else{#
-            #if(mCount === 0){#
-               <span>0 Match </span> 
-            #}else{#
-                <span>#:mCount# Matches</span>
+        <span>BIZ#: fid #
+        </span>
+        #if (mCount === 1) {#
+            <span>1 Match </span>
+        #}else {#
+            #if (mCount === 0) {#
+                <span>
+                    0 Match 
+                </span> 
+            #}else {#
+                <span>
+                    <a data-bind="click: applyIteriaLoan" data-mode="edit" data-fid="#: fid #">#:mCount# Matches</a>
+                </span>
             #}#
-        #}#
+        #}
+        #
         <span>#= kendo.toString(kendo.parseDate(fDate), 'MM/dd/yyyy') #
+    
         </span>
     </li>
 </script>
 <script type="text/x-kendo-template" id="endedAppList-template">
-    #var fDate = updatetime #
+    #var fDate = updatetime
+    
+    #
     <li class="clearfix">
         <span>BIZ#: fid #</span>
         <span>#= kendo.toString(kendo.parseDate(fDate), 'MM/dd/yyyy') #
-            
+        
         </span>
     </li>
 </script>
 <script type="text/x-kendo-template" id="savedAppList-template">
-    #var fDate = updatetime #
+    #var fDate = updatetime
+    
+    #
     <li class="clearfix">
         <span>
             <a data-bind="click: applyFreshLoan" data-mode="edit" data-fid="#: fid #">BIZ#: fid #</a>
         </span>
         <span>#= kendo.toString(kendo.parseDate(fDate), 'MM/dd/yyyy') #
-
         </span>
     </li>
 </script>

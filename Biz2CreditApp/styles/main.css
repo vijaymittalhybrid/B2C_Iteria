@@ -448,3 +448,67 @@ background-position:5px 15px !important;height: 50px;position: relative;backgrou
 #priority1.IN1.fund { width:317px!important;}
 .IN4.number {width:320px!important;}
 #tabstrip-manage-app #tabstrip ul li a span, #tabstrip-manage-app #tabstrip ul li:last-child a span{overflow:hidden;}
+
+
+
+/*********************************VIJAY WRITTEN CSS*********************************************/
+#iteriaModalView .km-header{background: #f4f4f4;}
+#iteriaModalView .km-header .km-widget.km-button{background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:5px 5px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0;}
+#iteriaModalView .view-content .km-widget.km-button {background-image: url(images/cross.png); background-repeat:no-repeat; background-size:50%; border-radius:2px; float:right; margin:5px 5px 0 0; height:30px; width:30px; border:0; text-indent:-9000px; background-position:center 8px; background-color:#ddd; text-shadow:0;}
+
+
+
+
+
+/***************************************hkjhjkhkjhkjhkjhkjjhkjhhkjhkjhkh****************************************************/
+
+#applypopup .titad{ font-size:17px; color:#999999;  font-family:'Open Sans', Arial, Helvetica, sans-serif; padding-bottom:15px;font-weight:600;}
+#applypopup  .IN3{font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:12px; color:#666; padding:8px 1%; border:1px solid #CCC;  -webkit-border-radius:5px; border-radius: 5px; width:45%; margin-right:1.5%; margin-bottom:10px; }
+#applypopup  .IN3b{font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:12px; color:#666; padding:8px 1%; border:1px solid #CCC;  -webkit-border-radius:5px; border-radius: 5px; width:47.8%; margin-right:1.5%; margin-bottom:10px;}
+#applypopup .BTgren{ padding:3px 40px 6px 40px; margin-left:0px; font-size:20px;}
+#applypopup .dat{ background-image:url(../images/ap_ic_dtev.png); background-position: right 8px; background-repeat:no-repeat}
+
+#applypopup .note{ padding:0 10px 10px 10px; font-size:13px; line-height:16px; color:#333333; border:solid 1px #eee; border-raius:5px; }
+.showfilds_bx{ padding:8px 10px 8px 10px; margin-bottom:13px; background-color:#fffef2; border:1px solid #edd3aa;  -webkit-border-radius:5px; border-radius: 5px; font-size:13px; margin-right: 22px; }
+#applypopup select {border: 1px solid #CCCCCC; border-radius: 5px; color: #333333; font-family: 'Open Sans',Arial,Helvetica,sans-serif; font-size: 12px;padding: 6px 7px;width: 250px; margin-left:10px}
+.opt{ margin:10px 0 0 0; padding:0 0 0 0; color:#333;}
+#applypopup input[type="text"]:focus ,#applypopup select:focus {background-color: #F6FFEA; border: 1px solid #BFE885;}
+#applypopup .IN3{ font-size:13px;}
+
+#applypopup .BTgren {background-color: #99CC00; border-radius: 4px; color: #FFFFFF; font-family: 'Open Sans',Arial,Helvetica,sans-serif; font-size: 16px; margin-left: 5px;
+padding: 4px 14px 5px; cursor: pointer; margin-top:10px;font-weight:600;}
+
+#applypopup .tooltip {background-color: #FFFFFF; border: 1px solid #999999;	box-shadow: 3px 3px 0 0 #e0e0e0;    display: none;    height: auto;    margin: 20px auto 0;    padding: 10px 10px 10px 10px;    text-align: left; width:400px; font-size:11px;	-webkit-border-radius: 3px; border-radius: 3px; z-index: 9999999; left: 197px; position:absolute;}
+#applypopup .tooltip span.tpar {background-image: url("../images/tootltip_ar.png"); background-position: center top; background-repeat: no-repeat; display: block; height: 17px; margin-top: -22px; position: absolute; width: 250px; z-index: 999; }
+#applypopup .tooltip div{ overflow:hidden; padding-bottom:6px; line-height:12px; font-size:12px; color:#333333}
+#applypopup .tooltip div p{font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:11px; line-height:17px; color:#515151}
+#applypopup .tooltip div p strong, #applypopup .tooltip div p b{ font-family:'Open Sans', Arial, Helvetica, sans-serif; color:#515151}
+#applypopup .tooltip div h6{font-family:'Open Sans', Arial, Helvetica, sans-serif; display:block; font-size:15px; color:#333; font-weight:300; padding-bottom:10px}
+#applypopup .tooltip div span{font-size:13px; color:#666666; float:left; width:47%; text-align:right; height:auto;}
+#applypopup .tooltip div span:nth-child(even){ float:right; color:#333; text-align:left}
+#applypopup .edtdet{ text-align:center; padding:30px 0px;}
+#applypopup .tooltip div a.btnblck{ background-image:none; color:#FFF; padding:11px 15px; display:inline-block; margin:0px auto; clear:both}
+#applypopup .que_hint {background-image: url("../styles/layout/quest_hint.png");background-repeat: no-repeat; display: inline-block; height: 19px; margin-left: -4px; margin-right: 14px; width: 25px;}
+#applypopup .tooltip h6{ line-height:22px;}
+.rows{ position:relative}
+.rows input[type="checkbox"]{ position:relative; top:2px; margin-right:3px;}
+.rows.options{ margin-top:10px;}
+.rows.options p a{ color:#84b112; font-weight:bold;}
+#applypopup .rows .tooltip {left: 198.05px!important; top:23px!important;}
+#applypopup .rows.options .tooltip {left: -1.95px!important;top: -152px !important}
+#applypopup .rows.options .tooltip span.tpar{background-image: url("../images/tootltip_ar-bt.png"); background-position: center top; background-repeat: no-repeat;margin-top: 142px;}
+
+.Go {background-color: #99CC00; border-radius: 4px; color: #FFFFFF; font-family: 'Open Sans',Arial,Helvetica,sans-serif; font-size: 13px; margin-left: 5px;
+padding: 4px 8px 5px; cursor: pointer; margin-top:10px;font-weight:600;}
+
+#colorbox{ z-index:99999999999999}
+
+.customLoad{width: 100%; height: 100%; background:#fff; position: absolute; left: 0px; top: 0px; z-index: 9; opacity: 0.8;}
+.conLoad{background: #fff;color: #444;text-shadow: none;border-radius: 6px;border: 6px solid #EAE9E9;margin: 0;padding: 30px;-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.5);-moz-box-shadow:0 5px 10px rgba(0,0,0,0.5);box-shadow:0 5px 10px rgba(0,0,0,0.5);
+position: absolute; left:-180px; width:300px; height:71px; margin-left:50%; margin-top: -14px; position:absolute; z-index:99999999; text-align:center;}
+.conLoad p{ text-align:center; font-size:13px; padding:6px 0 0 0; margin:20px 0 0 0; color:#666; font-family: "LucidaSansRegular",Arial,Helvetica,sans-serif;}
+
+#applypopup .que_hint_i {background-image: url("../images/infoic.png");background-repeat: no-repeat; display: inline-block; height: 19px;width: 25px;}
+
+
+#applypopup > .titad ul li ul { list-style:none;}
