@@ -512,3 +512,41 @@ position: absolute; left:-180px; width:300px; height:71px; margin-left:50%; marg
 
 
 #applypopup > .titad ul li ul { list-style:none;}
+
+
+
+
+
+
+
+
+
+
+#document-attach #tabstrip ul {padding:0; margin:0; list-style:none;}
+#document-attach #tabstrip ul li {width:49.99%; border:0;background-color:#f5f5f5; border-color:#fff; float:left;}
+#document-attach #tabstrip ul li a span {/*height:40px; width:40px; border:2px solid #fff;*/ display:block;margin:15% 0 0 10%; background-color:#999; text-align:center; line-height:35px; font-size:18px;color:#fff; -moz-border-radius:20px;-webkit-border-radius: 20px; }
+#document-attach #tabstrip ul li.k-state-active a span {background-color:#99cc00;}
+/*#document-attach #tabstrip ul li.postd_icn {background-image: url(images/posted-icon.png); background-position: 30px 22px; background-repeat:no-repeat; background-size:19%;}
+#document-attach #tabstrip ul li.k-state-active.postd_icn {background-image: url(images/posted-icon-act.png); background-position: 30px 22px; background-repeat:no-repeat;}
+#document-attach #tabstrip ul li.end_icon {background-image: url(images/ended-icon.png); background-position: 30px 22px; background-repeat:no-repeat; background-size:16%;}
+#document-attach #tabstrip ul li.k-state-active.end_icon {background-image: url(images/ended-icon-act.png); background-position: 30px 22px; background-repeat:no-repeat;}*/
+#document-attach #tabstrip ul li.sevd_icon {background-image: url(images/seved-icon.png); background-position: 30px 22px; background-repeat:no-repeat; background-size:13%;}
+#document-attach #tabstrip ul li.k-state-active.sevd_icon {background-image: url(images/seved-icon-act.png); background-position: 30px 22px; background-repeat:no-repeat;}
+#document-attach #tabstrip ul li.lon_icon {background-image: url(images/loan-agin-icon.png); background-position: 30px 22px; background-repeat:no-repeat; background-size:16%;}
+#document-attach #tabstrip ul li.k-state-active.lon_icon {background-image: url(images/loan-agin-icon-act.png); background-position: 30px 22px; background-repeat:no-repeat;}
+#document-attach #tabstrip ul li.k-state-active { background-color:#99cc00;}
+#document-attach #tabstrip ul li.k-state-active a {color:#fff !important;}
+#document-attach #tabstrip ul li a {border-left:2px solid #fff; text-align:left; display:block; cursor:pointer; font-size:22px; color:#999; font-weight:normal; padding:26px 0 0px 27%; height:80px;}
+#document-attach #tabstrip ul li:first-child a {border:0;}
+#document-attach #tabstrip {width:100;margin:0; display:block; border:0; background-color:#fff;}
+#document-attach #tabstrip .tabOne {margin:8.5% 1 0 !important; border:0; padding:0; position:relative;}
+#document-attach #tabstrip .tabOne ul.tabui { padding:0; margin:0;}
+#document-attach #tabstrip .tabOne ul.tabui li {background-color:#f5f5f5;margin:1px 0; padding:18px 40px; width:auto; display:block; float:none;}
+#document-attach #tabstrip .tabOne ul.tabui li a {padding:0; width:auto; float:none; height:auto; border:none; text-align:left; font-size:18px; color:#99cc00; font-weight:bold;}
+#document-attach #tabstrip .tabOne ul.tabui li span:first-child { text-align:left; width:93%; float:left; color:#333; font-weight:bold; font-size:18px; }
+#document-attach #tabstrip .tabOne ul.tabui li span {float:right; font-size:16px; color:#999; width:8%; text-align:right;}
+#document-attach #tabstrip ul li .actArw {display:none;}
+#document-attach #tabstrip div .tabOne .actArw {margin:0 0 0 86%; height:18px;}
+#document-attach #tabstrip div:nth-child(2) .tabOne .actArw {margin: 0 0 0 10%;}
+#document-attach #tabstrip div:nth-child(3) .tabOne .actArw {margin: 0 0 0 36%;}
+#document-attach #tabstrip div:nth-child(4) .tabOne .actArw { margin:0 0 0 61%;}

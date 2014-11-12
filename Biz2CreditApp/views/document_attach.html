@@ -1,0 +1,161 @@
+<div data-role="view" id="document-attach" data-model="app.documentAttach.viewModel" data-show="app.documentAttach.viewModel.show">
+    <div data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title">
+                <div class="matches-logo">
+                    <a href="#tabstrip-home">Back</a>
+                </div>
+            </span>
+        </div>
+    </div>
+    <div  data-role="content">
+        <div id="tabstrip">
+            <ul class="clearfix">
+                <li class="k-state-active postd_icn" data-bind="click: uploadDocumentClick">
+                    <a harf="#">
+                        Uplocad Document <span data-bind="text: uploadDocument"></span>
+                    </a>
+                </li>
+                <li class="end_icon" data-bind="click: existingDocumentClick">
+                    <a harf="#">
+                        Select Existing Document <span data-bind="text: existingDocument"></span>
+                    </a>
+
+                </li>
+            </ul>
+            <div>
+                <div class="tabOne withMatch" data-bind="visible: uploadDocumentTab">
+                    <div id="uploadDocsDiv" style="display: block;margin-top:-20px;">
+                        <div id="greybox-body">
+                            <div class="popup-content clearfix">
+                                <input type="hidden" name="curvfolder" id="curvfolder" value="">
+                                <div id="processId" style="position:absolute;"></div>
+                                <div class="link-block clearfix" style="margin-right:-2px;">
+                                    <input name="uploadify" id="uploadify" type="file"/>
+                                </div>
+                                <div class="field-block clearfix" id="fileQueue" style="width:auto;">
+                                    <span class="msg1" id="queueMsg">You have not selected any files to upload. Click Browse above to select files from your computer.</span>
+                                </div>
+                                <div class="field-block-gary clearfix" style="margin-right:-2px;">
+                                    <label>
+                                        <img src="styles/layout/folder.jpg" align="absmiddle"><span class="msg">Select a folder on Biz2Credit to upload to</span>
+                                   
+                                    </label>
+                                    <select name="dir" id="dir" class="inputbox" onchange="reset_uploadify(this.value)" style=" width:100%">
+                                        <option value="0">My Documents</option>
+                                        <script>
+                                            
+                                        </script>
+                                    </select>
+                                </div>
+                                <div class="button-block clearfix">
+                                   <!-- <input type="button" id="start" name="start" value="Upload">-->
+                                    <input name="" type="button" data-role="button" value="Upload" data-name="Upload" data-bind="click:uploadDocumentData" class="BTgren">
+
+                                    <input name="button" type="button" onclick="parent.$.fancybox.close({});" value="Cancel" class="shareButton-gray">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="tabOne" data-bind="visible: existingDocumentTab">
+                    <div id="shareDocsDiv" style="display: block;">
+                            <input type="hidden" name="appid" id="appid" value="72115">
+                            <input type="hidden" name="custid" id="custid" value="94356">
+                            <input type="hidden" name="matchid" id="matchid" value="88202">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td id="ShowSahreDocsId">
+                                            <div></div>
+                                            <table width="100%" cellpadding="0" cellspacing="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td colspan="5" background="images/color_bg.gif">
+                                                            <table width="100%" cellpadding="0" cellspacing="0">
+                                                                <tbody>
+                                                                    <tr height="29" align="left" valign="middle" style="">
+                                                                        <td width="50%" height="29" align="left" valign="middle" class="brdrRight">
+                                                                            <span class="head">Document</span>
+                                                                        </td>
+                                                                        <td width="20%" align="left" valign="middle" class="brdrRight">
+                                                                            <span class="head">Source</span>
+                                                                        </td>
+                                                                        <td width="20%" align="left" valign="middle" class="brdrRight">
+                                                                            <span class="head">Date</span>
+                                                                        </td>
+                                                                        <td width="10%" align="left" valign="middle" class="brdrRight">
+                                                                            <span class="head">Action</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="oddfile" height="29">
+                                                        <td width="50%" height="22" colspan="2" align="left" class="blueLink" style="border-right:1px solid #CCCCCC; padding-left:10px;">
+                                                            <img src="https://www.biz2beta.com/components/com_loan/doc-icon/jpg.png" style="border:none"> <span class="blueLink">ajeebsa(1).jpg</span>
+                                                        </td>
+                                                        <td width="20%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">Testing TDBank5 </td>
+                                                        <td width="20%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">2014-06-30 01:56:54 </td>
+                                                        <td width="10%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">
+                                                            <input type="checkbox" name="checkbox[]" value="3313">
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="evenfile" height="29">
+                                                        <td width="50%" height="22" colspan="2" align="left" class="blueLink" style="border-right:1px solid #CCCCCC; padding-left:10px;">
+                                                            <img src="https://www.biz2beta.com/components/com_loan/doc-icon/pdf.png" style="border:none"> <span class="blueLink">tdapp_2014_06_29_23_51_58.pdf</span>
+                                                        </td>
+                                                        <td width="20%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">Testing TDBank5 </td>
+                                                        <td width="20%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">2014-06-30 01:57:28 </td>
+                                                        <td width="10%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">
+                                                            <input type="checkbox" name="checkbox[]" value="3314">
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="oddfile" height="29">
+                                                        <td width="50%" height="22" colspan="2" align="left" class="blueLink" style="border-right:1px solid #CCCCCC; padding-left:10px;">
+                                                            <img src="https://www.biz2beta.com/components/com_loan/doc-icon/txt.png" style="border:none"> <span class="blueLink">w.txt</span>
+                                                        </td>
+                                                        <td width="20%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">Testing TDBank5 </td>
+                                                        <td width="20%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">2014-07-01 00:23:37 </td>
+                                                        <td width="10%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">
+                                                            <input type="checkbox" name="checkbox[]" value="3321">
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="evenfile" height="29">
+                                                        <td width="50%" height="22" colspan="2" align="left" class="blueLink" style="border-right:1px solid #CCCCCC; padding-left:10px;">
+                                                            <img src="https://www.biz2beta.com/components/com_loan/doc-icon/png.png" style="border:none"> <span class="blueLink">Untitled.png</span>
+                                                        </td>
+                                                        <td width="20%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">Testing TDBank5 </td>
+                                                        <td width="20%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">2014-11-11 23:13:08 </td>
+                                                        <td width="10%" style="border-right:1px solid #CCCCCC; padding-left:10px;" class="blueLink">
+                                                            <input type="checkbox" name="checkbox[]" value="5069">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" colspan="4">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4">
+                                            <input type="hidden" name="myid" value="94356">
+                                            <input type="hidden" name="ids" value="">
+                                            <input name="Attach" type="button" data-role="button" value="Attach" data-name="Attach" data-bind="click:attachDocumentData" class="BTgren">
+                                            <!--<input type="submit" name="submit" value="Attach" class="shareButton-green" onclick="return checkValidation();">-->
+                                            <input name="button" type="button" onclick="parent.$.fancybox.close({});" value="Cancel" class="shareButton-gray">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

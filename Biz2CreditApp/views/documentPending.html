@@ -13,7 +13,7 @@
             <div id="matchDocList" class="wrap-content ">
                 <div class="accord_wrap">
                     <h2 class="off">Please upload required documents</h2>
-                    <div class="rows" style="display:none">
+                    <div class="rows">
                         <div class="row clearfix">
                             <div class="num">
                                 <span>1</span>
@@ -45,9 +45,12 @@
                                 </div>
                             </div>
                             <div class="upload">
-                                <a href="https://www.biz2beta.com/index.php?option=com_docfile&amp;task=matchUploadDoc&amp;custid=94356&amp;appid=72115&amp;docid=149&amp;doctype=0&amp;matchid=88202" class="active appDocFile">Upload New/Select Existing</a>
+                                <a data-bind="click:UploadExisting" class="active appDocFile">Upload New/Select Existing</a>
                             </div>
                         </div>
+                        
+                         <ul data-template="creditReviewIteria-template"></ul>
+                        
                     </div>
                 </div>
 
@@ -63,6 +66,8 @@
                                 <a href="https://www.biz2beta.com/index.php?option=com_docfile&amp;task=matchUploadDoc&amp;custid=94356&amp;appid=72115&amp;docid=1&amp;doctype=0&amp;matchid=88202" class="active  appDocFile">Upload New/Select Existing</a>
                             </div>
                         </div>
+                        
+                        <ul data-template="driverLicense-template"></ul>
 
                         <div class="row clearfix">
                             <div class="num">
@@ -73,6 +78,9 @@
                                 <a href="https://www.biz2beta.com/index.php?option=com_docfile&amp;task=matchUploadDoc&amp;custid=94356&amp;appid=72115&amp;docid=78&amp;doctype=0&amp;matchid=88202" class="active  appDocFile">Upload New/Select Existing</a>
                             </div>
                         </div>
+                        
+                        <ul data-template="proofPayment-template"></ul>
+                        
                     </div>
                 </div>
             
@@ -82,7 +90,18 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-
-</script>
 </div>
+
+<!--Template Design-->
+<script type="text/x-kendo-template" id="creditReviewIteria-template">
+    
+</script>
+
+<script type="text/x-kendo-template" id="driverLicense-template">
+    
+</script>
+
+<script type="text/x-kendo-template" id="proofPayment-template">
+    
+</script>
+

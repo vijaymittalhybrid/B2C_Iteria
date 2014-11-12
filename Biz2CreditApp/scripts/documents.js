@@ -49,8 +49,7 @@
             }
         },
         documentShow:function(e)
-        { 
-            
+       { 
             if(!window.connectionInfo.checkConnection()){
             	navigator.notification.confirm('No Active Connection Found.', function (confirmed) {
         			if (confirmed === true || confirmed === 1) {
@@ -83,6 +82,7 @@
                     app.documentsetting.viewModel.setParentId(0);
                 } 
                 parentName = shareBackHistory[shareBackHistory.length-1];
+                console.log(parentName);
                 if(parentName==='Shared Files' || parentName==='Shared Folders' || parentName==='subSharedFolder')
                 {
                     var dataSource = new kendo.data.DataSource({         
@@ -297,6 +297,7 @@
                  
                 dataSource.fetch(function(){
                     var data = dataSource.view(); 
+                    
                     app.documentsetting.viewModel.setDocuments(data);
                     app.documentsetting.viewModel.hideRefreshLoading();
                 }); 

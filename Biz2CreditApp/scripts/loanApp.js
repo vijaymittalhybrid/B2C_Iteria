@@ -85,6 +85,7 @@
         },
         setManageStatus:function(data)
         {
+            console.log(data);
             var that = this;
             var blankArray =[];
             blankArray['fid']='';

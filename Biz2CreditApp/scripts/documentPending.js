@@ -15,9 +15,11 @@
             $(".documentList .wrap-content .row .name a").on("click", function() {
                 $(this).parents('.row').next(".filesBlock").slideToggle();	
             });
-        }
-        
-        
+        },
+        UploadExisting:function()
+        {
+            apps.navigate("views/document_attach.html");
+        },
     });
     app.documentService ={
         viewModel:new DocumentPendingModel()
