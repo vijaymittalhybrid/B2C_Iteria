@@ -5,7 +5,7 @@
     documentAttachModel = kendo.data.ObservableObject.extend({
         show:function()
         {
-            alert("hello");
+            app.loginService.viewModel.showloder();
             /*Upload Buutton*/
             $("#uploadify").kendoUpload({
                 async: {
@@ -64,9 +64,8 @@
             dataSource.fetch(function(){
                 var that = this;
                 var data = that.data();
-                var docdata = data[0];
-                console.log(data);
-                app.documentAttach.viewModel.setManageDocument(data);
+                app.documentAttach.viewModel.existingDocumentList(data);
+                app.documentAttach.viewModel.uplocadDocumentList(data);
             });
 
             
@@ -75,9 +74,9 @@
             
             app.documentAttach.viewModel.uploadDocumentClick();
         },
-        setManageDocument:function(data)
+        existingDocumentList:function(docsData)
         {
-            console.log(data);
+           /* console.log(data);
             var that = this;
              $.each(data, function( index, value ) {
                  
@@ -93,7 +92,38 @@
                  }
                  
                
-        	});  
+        	});  */
+          //  console.log(docsData);
+            var template = kendo.template($("#documentList-template").html());
+
+            //Create some dummy data
+            var data = docsData;
+           // console.log(localStorage.getItem("userFName"));
+           // console.log(data[0].length);
+
+            var result = template(data); //Execute the template
+            $("#documentList").html(result); //Append the result
+            app.loginService.viewModel.hideloder();
+       
+        },
+        uplocadDocumentList:function(docsData)
+        {
+           // console.log(docsData);
+            var template = kendo.template($("#dropdownList-template").html());
+
+            //Create some dummy data
+            var data = docsData;
+            console.log(localStorage.getItem("userFName"));
+            console.log(data[0].length);
+
+            var result = template(data); //Execute the template
+            $("#dropdownList").html(result); //Append the result
+        },
+        getFileExtension:function(filename)
+        {
+           // console.log(filename);
+            var ext = /^.+\.([^.]+)$/.exec(filename);
+            return ext === null ? "" : ext[1];
         },
         uploadDocumentClick:function()
         {
